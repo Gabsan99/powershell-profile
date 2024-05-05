@@ -103,7 +103,7 @@ function Get-PubIP { (Invoke-WebRequest http://ifconfig.me/ip).Content }
 
 #Navigation
 function me { Set-Location -Path "D:\Varie\Gabri files"}
-function polluca { Set-Location -Path "D:\Varie\Gianluca"
+function polluca { Set-Location -Path "D:\Varie\Gianluca"}
 function docs { Set-Location -Path $HOME\Documents }
 function desktop { Set-Location -Path $HOME\Desktop }
 
