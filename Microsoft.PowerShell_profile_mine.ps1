@@ -99,7 +99,7 @@ function ff($name) {
     }
 }
 #Network
-function Get-PubIP { (Invoke-WebRequest http://ifconfig.me/ip).Content }
+function pubIP { (Invoke-WebRequest http://ifconfig.me/ip).Content }
 
 #Navigation
 function me { Set-Location -Path "D:\Varie\Gabri files"}
