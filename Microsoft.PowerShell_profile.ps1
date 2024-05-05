@@ -23,7 +23,7 @@ function Update-Profile {
     }
 
     try {
-        $url = "https://raw.githubusercontent.com/ChrisTitusTech/powershell-profile/main/Microsoft.PowerShell_profile.ps1"
+        $url = "https://raw.githubusercontent.com/Gabsan99/powershell-profile/main/Microsoft.PowerShell_profile.ps1"
         $oldhash = Get-FileHash $PROFILE
         Invoke-RestMethod $url -OutFile "$env:temp/Microsoft.PowerShell_profile.ps1"
         $newhash = Get-FileHash "$env:temp/Microsoft.PowerShell_profile.ps1"
@@ -203,9 +203,11 @@ function mkcd { param($dir) mkdir $dir -Force; Set-Location $dir }
 ### Quality of Life Aliases
 
 # Navigation Shortcuts
+function me { Set-Location -Path "D:\Varie\Gabri files"}
+
 function docs { Set-Location -Path $HOME\Documents }
 
-function dtop { Set-Location -Path $HOME\Desktop }
+function desktop { Set-Location -Path $HOME\Desktop }
 
 # Quick Access to Editing the Profile
 function ep { vim $PROFILE }
@@ -242,7 +244,7 @@ function lazyg {
 function sysinfo { Get-ComputerInfo }
 
 # Networking Utilities
-function flushdns { Clear-DnsClientCache }
+# function flushdns { Clear-DnsClientCache }
 
 # Clipboard Utilities
 function cpy { Set-Clipboard $args[0] }
@@ -257,7 +259,7 @@ Set-PSReadLineOption -Colors @{
 }
 
 ## Final Line to set prompt
-oh-my-posh init pwsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/cobalt2.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/hul10.omp.json | Invoke-Expression
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {
     Invoke-Expression (& { (zoxide init powershell | Out-String) })
 } else {
